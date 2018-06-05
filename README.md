@@ -1,1 +1,1 @@
-# bamazonv2
+# bamazon
