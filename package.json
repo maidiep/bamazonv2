@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/maidiep/bamazon/issues"
   },
-  "homepage": "https://github.com/maidiep/bamazon#readme"
+  "homepage": "https://github.com/maidiep/bamazon#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^6.0.0",
+    "inquirer": "^6.0.0",
+    "mysql": "^2.15.0"
+  }
 }
