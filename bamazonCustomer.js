@@ -66,11 +66,12 @@ var promptCustomerForQuantity = function(product) {
                 if (err) throw err;
                 console.log("Thank you for your order!");
                 console.log("Your total is " + "$" + answer.quantity * product.price);
-           keepShopping();              
+           keepShopping();   
+          })
+        }
+      })
+    }           
         
-
-
-
            
         function keepShopping(){
             inquirer.prompt([
@@ -89,8 +90,5 @@ var promptCustomerForQuantity = function(product) {
       } 
       });
   }
-            })
-          }
-        })
-      }
+        
       
