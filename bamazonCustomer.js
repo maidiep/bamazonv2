@@ -66,20 +66,31 @@ var promptCustomerForQuantity = function(product) {
                 if (err) throw err;
                 console.log("Thank you for your order!");
                 console.log("Your total is " + "$" + answer.quantity * product.price);
-                console.log("____________________________");
-                inventory();
-              });
-          }
-        else {
-            console.log("Insufficient Quantity")}
+           keepShopping();              
+        
+
+
+
+           
+        function keepShopping(){
+            inquirer.prompt([
+        {
+          type: "confirm",
+          name: "purchaseMore",
+          message: "Would you like to make another purchase?"
+        }
+      ]).then(function(res){
+        if (res.purchaseMore) {
+        inventory();
+      }
+      else {
+        console.log("Thank you. Please come again.");
+        connection.end();
+      } 
       });
-  };
-
-
-function makePurchase() {
-
-};
-
-function checkInventory() {
-
-};
+  }
+            })
+          }
+        })
+      }
+      
