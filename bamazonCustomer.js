@@ -62,12 +62,11 @@ var promptCustomerForQuantity = function(product) {
       ])
       .then(function(answer) {
           if (answer.quantity < product.stock_quantity) {
-            connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?", [answer.quantity, product.item_id], function(
-                err,
-                res
-              ) {
+            connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?", [answer.quantity, product.item_id], function(err,res) {
                 if (err) throw err;
-                console.log("Successfully Purhcased!");
+                console.log("Thank you for your order!");
+                console.log("Your total is " + "$" + answer.quantity * product.price);
+                console.log("____________________________");
                 inventory();
               });
           }
