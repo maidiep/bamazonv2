@@ -44,15 +44,19 @@ inquirer
         for (var i = 0; i < inventory.length; i++) {
             if (answer.choice==inventory[i].item_id) {
             product = inventory[i];
+            promptCustomerForItem(res);
+
+            } else {
+                console.log("Please enter a valid item_id.");
             }
         }
-        promptCustomerForQuantity(product);
+     
+
       });
     });
   };
 
 
-var promptCustomerForQuantity = function(product) {
     inquirer
       .prompt([
         {
@@ -93,5 +97,5 @@ var promptCustomerForQuantity = function(product) {
       } 
       });
   }
-} 
+
       
