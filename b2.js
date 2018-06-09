@@ -70,11 +70,10 @@ var promptCustomerForQuantity = function(product) {
            keepShopping();   
           })
         } else {
-          console.log("Quantity entered exceeds inventory. Try again.");
-          promptCustomerForQuantity(product);
-  };        
-    })           
-  }
+            console.log("Quantity entered exceeds inventory. Please try again");
+            promptCustomerForQuantity(product);
+    };        
+      });
         
            
         function keepShopping(){
@@ -94,5 +93,5 @@ var promptCustomerForQuantity = function(product) {
       } 
       });
   }
-        
+} 
       
